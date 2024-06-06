@@ -1,0 +1,26 @@
+name: Tasks
+
+on:
+  workflow_dispatch:
+    Inputs:
+      position:
+        description: Position title
+        type: string
+job_type:
+description: Enter your job
+type: string
+
+jobs:
+my_first_job:
+runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      - name: job title
+        run: |
+          echo "Please enter your job title"
+          echo "${{ github.event.inputs.position}} is already exist in system as ${{ job_type}}, please check information in HR"
